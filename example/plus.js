@@ -9,8 +9,8 @@ var f = new Forever();
 f.onError(function(err) {
     console.log(err);
 });
-f.add(addOne, counter).run();
+f.setInterval(100).add(addOne, counter).run();
 
 setTimeout(function(){
     f.stop();
-}, 100);
+}, 2000);
