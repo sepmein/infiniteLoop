@@ -1,0 +1,25 @@
+{
+  "name": "infiniteLoop",
+  "version": "0.1.0",
+  "description": "infinite loop in nodejs, easy to use, good performance",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sepmein/infiniteLoop.git"
+  },
+  "keywords": [
+    "node",
+    "infinite",
+    "loop",
+    "control",
+    "flow"
+  ],
+  "author": "Spencer Z",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/sepmein/infiniteLoop/issues"
+  }
+}
