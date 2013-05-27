@@ -1,6 +1,6 @@
 {
-  "name": "infiniteLoop",
-  "version": "0.1.0",
+  "name": "infinite-loop",
+  "version": "0.1.1",
   "description": "infinite loop in nodejs, easy to use, good performance",
   "main": "index.js",
   "scripts": {

@@ -1,1 +1,1 @@
-module.exports = require('./lib/infiniteLoop');
+module.exports = require('./lib/infiniteLoop.js');
