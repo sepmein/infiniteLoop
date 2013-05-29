@@ -18,7 +18,7 @@
 
       <header>
         <h1>Infinite Loop - a node js packge</h1>
-        <p>manage infinite loops in javascript with ease</p>
+        <p>Good Performance, Low Mem Comsumption, Easy to Use</p>
       </header>
 
       <div id="banner">
@@ -39,35 +39,59 @@
         <ul></ul>
       </nav>
       <section>
-        <h3>What is Infinite Loop?</h3>
+        <h2>
+<a name="infinite-loop-is-a-nodejs-package-for-easily-managing-loops-in-javascript" class="anchor" href="#infinite-loop-is-a-nodejs-package-for-easily-managing-loops-in-javascript"><span class="octicon octicon-link"></span></a><strong>Infinite Loop</strong> is a nodejs package for easily managing loops in Javascript.</h2>
 
-<p>Infinite Loop is a nodejs package for easily managing loops in Javascript.</p>
+<h3>
+<a name="install-it-with-npm" class="anchor" href="#install-it-with-npm"><span class="octicon octicon-link"></span></a>Install it with npm</h3>
 
-<p>Sometimes, we want to do something <strong>forever</strong> in nodejs.
-Such as </p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>npm install infinite-loop
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h3>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h3>
 
-<h3>Designer Templates</h3>
+<p>The Most Basic one is helloWorld</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p><em>Step one:</em> require infinite loop module</p>
 
-<h3>Rather Drive Stick?</h3>
+<pre><code>var Infiniteloop = require('infinite-loop');
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><em>Step two:</em> define the function which you want to call forever</p>
 
-<h3>Authors and Contributors</h3>
+<pre><code>//simply log something to the console
+function say(word1, word2){
+    console.log(word1 + word2);
+}
+</code></pre>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p><em>Step three:</em> init an instance, make it done</p>
 
-<h3>Support or Contact</h3>
+<pre><code>var loop = new Infiniteloop();
+//use loop.add to add a function
+//fisrt argument should be the fn, the rest is the fn's arguments
+loop.add(say, 'hello', ' world!');
+//make it run
+loop.run();
+</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<pre><code>//The api is also chainale
+loop.add(say, 'hello', ' world!').run();
+</code></pre>
+
+<p>That's it. Your function will be called forever.</p>
+
+<p>If you want to stop the loop, just use <code>stop</code> function:
+For example, stop the loop after 5 seconds:</p>
+
+<pre><code>setTimeout(function(){
+    loop.stop();
+}, 5000);
+</code></pre>
+
+<h3>
+<a name="api-docs" class="anchor" href="#api-docs"><span class="octicon octicon-link"></span></a>API DOCs</h3>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/sepmein">sepmein</a></p>
