@@ -1,11 +1,11 @@
 infiniteLoop
 ============
 
-Infinite loop for Node.js.
+Infinite loop for Node.js. **Easy to Use** & **Good Performance**
 
-A helper for running tasks repeatly in Node.js. It's **Easy to Use** and **Good Performance**.
+A helper for running tasks repeatly in Node.js. 
 
-get start by:
+get started by:
 
 ```
 npm install infinite-loop
@@ -49,10 +49,9 @@ il.run();
 the infinite-loop is also chainable
 
 ```javascript
-il.add(addOne, 1).run();
+il.add(addOne, counter).run();
 ```
-and it will output this:
-
+The output will be:
 ```
 1
 2
@@ -63,7 +62,7 @@ and it will output this:
 ...
 ```
 
-Find out more feature at the APIs section
+Find out more feature at the [APIs](#api) section
 
 ### Good Performance
 
@@ -73,19 +72,25 @@ Infinite Loop use `setImediate` internally to run task repeatly.
 
 #### .add
 `.add(function, [arguments...])`
+
 `.add` take one or more arguments.
+
 The first one **must** be a *function*, the rest arguments are the function's arguments.
 If the first arguments is not a function , InfiniteLoop will throw an Error.
 
 #### .run
-`.run([times])`
+
 invoke the task
+
+`.run([times])`
+
 `.run()` take one argument optionally. By setting the optional *argument:times*, the task will only run the exact times.
 
 #### .setInterval
 `.setInterval(interval)`
-It will set an interval for the task.
-argument:interval should be a number and should >0
+
+It will set an interval for the task.argument:interval should be a number and should >0
+
 You should call `.setInterval` before `.run`
 
 #### .removeInterval
@@ -95,6 +100,7 @@ remove interval
 #### .onError
 `.onError(errHandler)`
 If not used properly, Infiniteloop will throws some error. By calling `.onError`, you could catch these errors, and prevent the app from crashing.
+
 *argument:errHandler* must be a function
 
 example:
@@ -118,4 +124,4 @@ setTimeout( function(){
 
 
 
-code by Spencer.Z
+by Spencer.Z
