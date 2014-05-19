@@ -69,5 +69,51 @@ Infinite Loop use `setImediate` internally to run task repeatly.
 
 ### APIs
 
+#### .add
+`.add(function, [arguments...])`
+`.add` take one or more arguments.
+The first one **must** be a *function*, the rest arguments are the function's arguments.
+If the first arguments is not a function , InfiniteLoop will throw an Error.
 
-coded by Spencer.Z
+#### .run
+`.run([times])`
+invoke the task
+`.run()` take one argument optionally. By setting the optional *argument:times*, the task will only run the exact times.
+
+#### .setInterval
+`.setInterval(interval)`
+It will set an interval for the task.
+argument:interval should be a number and should >0
+You should call `.setInterval` before `.run`
+
+#### .removeInterval
+`.removeInterval()`
+remove interval
+
+#### .onError
+`.onError(errHandler)`
+If not used properly, Infiniteloop will throws some error. By calling `.onError`, you could catch these errors, and prevent the app from crashing.
+*argument:errHandler* must be a function
+
+example:
+```javascript
+il.onError(function(error){
+    console.log(error);
+});
+```
+
+you could emit custom errors by calling `il.emit('error', new Error('error message'))`
+
+### .stop
+Stop the InfiniteLoop
+
+example: stop the loop after 10 seconds
+```javascript
+setTimeout( function(){
+    il.stop();
+    } , 10 * 1000);
+```
+
+
+
+code by Spencer.Z
