@@ -48,9 +48,9 @@ loops.forever = function withoutInterval() {
     var that = this;
     if (typeof fns === 'function') {
         setImmediate(function () {
-        fns.apply(that, fnsArguments);
-        withoutInterval.apply(that, fns, fnsArguments);
-    });    
+            fns.apply(that, fnsArguments);
+            withoutInterval.apply(that, fns, fnsArguments);
+        });
 
     }
 
@@ -78,7 +78,7 @@ function countPlusPlus(n, m) {
 
 
 //test
-var Forever = require('infinite-loop');
+var Forever = require('./lib/infiniteLoop.js');
 
 var counter = {num: 0};
 
@@ -86,11 +86,11 @@ function addOne(c) {
     console.log(c.num++);
 }
 var f = new Forever();
-f.onError(function(err) {
+f.onError(function (err) {
     console.log(err);
 });
 f.add(addOne, counter).run();
 
-setTimeout(function(){
+setTimeout(function () {
     f.stop();
 }, 1000);
