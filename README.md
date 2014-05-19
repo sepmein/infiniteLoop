@@ -62,7 +62,7 @@ The output will be:
 ...
 ```
 
-Find out more feature at the [APIs](#api) section
+Find out more feature at the [APIs](#APIs) section
 
 ### Good Performance
 
