@@ -28,6 +28,8 @@ var il = new InfiniteLoop;
 3. add a task
 
 ```javascript
+//simple ++ counter example
+var counter = 0;
 //task you want to run infinitely
 function addOne(n) {
   n++;
@@ -35,7 +37,7 @@ function addOne(n) {
 }
 
 //add it by calling .add
-il.add(addOne, 1);
+il.add(addOne, counter);
 ```
 
 4. run it
@@ -47,7 +49,7 @@ il.run();
 the infinite-loop is also chainable
 
 ```javascript
-il.add(addOne, 1).run();
+il.add(addOne, counter).run();
 ```
 and it will output this:
 
