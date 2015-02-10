@@ -78,7 +78,7 @@ function countPlusPlus(n, m) {
 
 
 //test
-var Forever = require('./lib/infiniteLoop.js');
+var Forever = require('../lib/infiniteLoop.js');
 
 var counter = {num: 0};
 
