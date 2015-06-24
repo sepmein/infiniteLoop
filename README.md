@@ -31,13 +31,13 @@ var il = new InfiniteLoop;
 //simple ++ counter example
 var counter = 0;
 //task you want to run infinitely
-function addOne(n) {
-  n++;
-  console.log(n);
+function addOne() {
+  counter++;
+  console.log(counter);
 }
 
 //add it by calling .add
-il.add(addOne, counter);
+il.add(addOne, []);
 ```
 
 4. run it
